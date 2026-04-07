@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# ─── Bonfyre Pages App Hook ──────────────────────────────────────────────────
+set -euo pipefail
+
+BONFYRE_BIN="${BONFYRE_BIN:-$HOME/.local/bin}"
+export PATH="$BONFYRE_BIN:$PATH"
+
+log() { printf "\033[0;33m[bonfyre]\033[0m %s\n" "$1"; }
+err() { printf "\033[0;31m[bonfyre]\033[0m %s\n" "$1" >&2; }
+
+require_bin() {
+  for b in "$@"; do
+    command -v "$b" >/dev/null 2>&1 || { err "Missing: $b (run 'make install' in bonfyre-oss)"; return 1; }
+  done
+}
+MSG_FILE="$1"; [ "${2:-}" = "merge" ] && exit 0
+INT=$(git diff --cached --name-only -- 'input/interviews/' 2>/dev/null | wc -l | tr -d ' ')
+REP=$(git diff --cached --name-only -- 'input/reports/' 2>/dev/null | wc -l | tr -d ' ')
+[ "$INT" -eq 0 ] && [ "$REP" -eq 0 ] && exit 0
+PARTS=()
+[ "$INT" -gt 0 ] && PARTS+=("${INT} interview(s)")
+[ "$REP" -gt 0 ] && PARTS+=("${REP} report(s)")
+echo "[evidence] $(IFS=', '; echo "${PARTS[*]}")" > "$MSG_FILE"
