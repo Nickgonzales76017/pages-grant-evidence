@@ -2,7 +2,7 @@
   {
     "id": "demo-grant-evidence-a",
     "file": "community-impact-interview.wav",
-    "time": "Demo dataset",
+    "time": "Reference corpus",
     "status": "complete",
     "brief": "Interview surfaces a strong impact story: the program reduced referral delays, increased family follow-through, and gave staff a clearer operating rhythm. Best grant angle is measurable access improvement backed by concrete participant outcomes and repeatable workflow gains.",
     "tags": [
@@ -14,15 +14,15 @@
     "demo": true,
     "searchSummary": "impact proof, community outcomes, interview evidence",
     "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the seeded records to feel that inside the app.",
+    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
     "searchOutputs": []
   },
   {
     "id": "demo-grant-evidence-b",
     "file": "Related community-impact-interview.wav",
-    "time": "Demo dataset",
+    "time": "Reference corpus",
     "status": "complete",
-    "brief": "A second seeded record extends the same workflow so in-app search and reuse are visible instead of theoretical.",
+    "brief": "A second reference record extends the same workflow so in-app search and reuse are visible instead of theoretical.",
     "tags": [
       "outcomes",
       "families",
@@ -32,15 +32,15 @@
     "demo": true,
     "searchSummary": "related signals, continuity, reuse",
     "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the seeded records to feel that inside the app.",
+    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
     "searchOutputs": []
   },
   {
     "id": "demo-grant-evidence-c",
     "file": "Follow-up community-impact-interview.wav",
-    "time": "Demo dataset",
+    "time": "Reference corpus",
     "status": "complete",
-    "brief": "A third seeded record shows how this app can connect follow-up work, recurring themes, and downstream use without leaving the demo experience.",
+    "brief": "A third reference record shows how this app can connect follow-up work, recurring themes, and downstream use without leaving the demo experience.",
     "tags": [
       "outcomes",
       "families",
@@ -50,7 +50,7 @@
     "demo": true,
     "searchSummary": "follow-up, memory, downstream action",
     "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the seeded records to feel that inside the app.",
+    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
     "searchOutputs": []
   }
 ]
