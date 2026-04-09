@@ -1,0 +1,10 @@
+{
+  "id": "demo-grant-evidence",
+  "file": "community-impact-interview.wav",
+  "time": "Demo dataset",
+  "status": "complete",
+  "brief": "Interview surfaces a strong impact story: the program reduced referral delays, increased family follow-through, and gave staff a clearer operating rhythm. Best grant angle is measurable access improvement backed by concrete participant outcomes and repeatable workflow gains.",
+  "tags": ["outcomes", "families", "operations"],
+  "flagged": true,
+  "demo": true
+}
