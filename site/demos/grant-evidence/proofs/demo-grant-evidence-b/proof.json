@@ -1,0 +1,16 @@
+{
+  "title": "grant-evidence \u2014 VEAl9riAOsQ",
+  "public_url": "https://www.youtube.com/watch?v=VEAl9riAOsQ",
+  "source": {
+    "title": "Bob Steane Impact Report",
+    "channel": "Saskatoon Community Foundation",
+    "duration_seconds": 82
+  },
+  "transcribe": {
+    "avg_confidence": 0.8726,
+    "rtf": 0.04,
+    "segments_total": 1240,
+    "segments_hallucinated": 360
+  },
+  "retained_media": false
+}

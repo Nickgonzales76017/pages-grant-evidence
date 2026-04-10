@@ -1,0 +1,17 @@
+{
+  "title": "Follow-up community-impact-interview",
+  "public_url": "https://www.youtube.com/watch?v=tVRJ5MJnHJo",
+  "source": {
+    "title": "Follow-up community-impact-interview",
+    "channel": "Reference corpus",
+    "duration_seconds": 94
+  },
+  "transcribe": {
+    "avg_confidence": 0.8234,
+    "avg_logprob": -0.481,
+    "rtf": 0.062,
+    "segments_total": 18,
+    "segments_hallucinated": 1
+  },
+  "retained_media": false
+}

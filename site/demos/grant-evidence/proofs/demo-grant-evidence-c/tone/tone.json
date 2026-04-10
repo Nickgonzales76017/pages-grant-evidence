@@ -1,0 +1,12 @@
+{
+  "features": {
+    "F0semitoneFrom27.5Hz_sma3nz_amean": 18.89,
+    "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.483,
+    "loudness_sma3_amean": 0.368,
+    "loudness_sma3_stddevNorm": 0.237,
+    "HNRdBACF_sma3nz_amean": 8.97,
+    "shimmerLocaldB_sma3nz_amean": 1.317,
+    "jitterLocal_sma3nz_amean": 0.0201,
+    "spectralFlux_sma3_amean": 0.0665
+  }
+}

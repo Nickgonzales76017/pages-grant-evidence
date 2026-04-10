@@ -1,0 +1,17 @@
+{
+  "title": "Community Impact Grant: Shakespeare Squad",
+  "public_url": "https://www.youtube.com/watch?v=9TW3RJTkVBE",
+  "source": {
+    "title": "Community Impact Grant: Shakespeare Squad",
+    "channel": "SocialConcernsND",
+    "duration_seconds": 164
+  },
+  "transcribe": {
+    "avg_confidence": 0.8692,
+    "avg_logprob": -0.5,
+    "rtf": 0.038,
+    "segments_total": 31,
+    "segments_hallucinated": 0
+  },
+  "retained_media": false
+}

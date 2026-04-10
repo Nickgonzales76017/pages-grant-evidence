@@ -1,0 +1,17 @@
+{
+  "title": "Nonprofit Founder\u2019s \u201cRoad to Redemption\u201d Includes Helping Returning Citizens | Impact Moment",
+  "public_url": "https://www.youtube.com/watch?v=dd2UgwjdLC0",
+  "source": {
+    "title": "Nonprofit Founder\u2019s \u201cRoad to Redemption\u201d Includes Helping Returning Citizens | Impact Moment",
+    "channel": "DCTV Grants",
+    "duration_seconds": 293
+  },
+  "transcribe": {
+    "avg_confidence": 0.8411,
+    "avg_logprob": -0.5,
+    "rtf": 0.0558,
+    "segments_total": 56,
+    "segments_hallucinated": 0
+  },
+  "retained_media": false
+}

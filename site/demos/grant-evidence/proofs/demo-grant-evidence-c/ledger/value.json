@@ -1,0 +1,11 @@
+{
+  "family_id": "brief-demo-grant-evidence-c",
+  "atoms": 1,
+  "operators": 2,
+  "realizations": 4,
+  "unrealized_targets": 0,
+  "raw_bytes": 12200,
+  "compressed_bytes": 19800,
+  "replacement_cost_usd": 3.21,
+  "portfolio_value_usd": 13.44
+}

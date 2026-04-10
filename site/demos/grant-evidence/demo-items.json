@@ -1,56 +1,110 @@
 [
   {
-    "id": "demo-grant-evidence-a",
-    "file": "community-impact-interview.wav",
-    "time": "Reference corpus",
+    "id": "community-impact-shakespeare",
+    "file": "Community Impact Grant: Shakespeare Squad",
+    "time": "Public origin \u00b7 164s",
     "status": "complete",
-    "brief": "Interview surfaces a strong impact story: the program reduced referral delays, increased family follow-through, and gave staff a clearer operating rhythm. Best grant angle is measurable access improvement backed by concrete participant outcomes and repeatable workflow gains.",
+    "brief": "I invite you to experience our work online via our website, which is Shakespeare. \"  I was working on some scenes from Macbeth with these guys just about a year ago. As we got into the  second and third year of the program, we realized we wanted to devise a new play involving some stories  from Shakespeare, but also interviewing the residents and having their story be the story that is told  in their park. The students themselves named it, it's called the \"Shakespeare Squad,\" and within one year,  just this summer, as I record this, it's August of 2020, the program was awarded a grant from  the National Endowment for the Arts, the Shakespeare and American Communities Grant for Juvenile Justice.",
     "tags": [
-      "outcomes",
-      "families",
-      "operations"
+      "nonprofit",
+      "impact",
+      "grant",
+      "community",
+      "evidence"
     ],
     "flagged": true,
     "demo": true,
-    "searchSummary": "impact proof, community outcomes, interview evidence",
-    "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
+    "sourceUrl": "https://www.youtube.com/watch?v=9TW3RJTkVBE",
+    "sourceLabel": "Watch original public video",
+    "sourceTitle": "Community Impact Grant: Shakespeare Squad",
+    "publisher": "SocialConcernsND",
+    "license": "Public YouTube video processed transiently. Bonfyre retained only derived artifacts.",
+    "sourceCopy": "Source: SocialConcernsND on YouTube. Bonfyre downloaded, transcribed, and deleted the media. Only the transcript, brief, and proof remain.",
+    "whyItMatters": "Community stories become grant-ready evidence bundles \u2014 impact narratives tied to real interviews and data.",
+    "searchSummary": "nonprofit, impact, grant",
+    "searchIntro": "Search across the grant evidence records to see how Bonfyre connects related content from different sources.",
+    "outputs": [
+      "impact brief",
+      "clean transcript",
+      "proof bundle",
+      "search across stories"
+    ],
+    "outputNotes": {
+      "impact brief": "Bonfyre extracted the key points from the source audio into a structured impact brief.",
+      "clean transcript": "The raw transcript cleaned of filler words, false starts, and artifacts.",
+      "proof bundle": "Full provenance chain: source URL, transcription confidence, processing recipe, and quality flags."
+    },
+    "outputLinks": {
+      "brief": {
+        "href": "demos/grant-evidence/proofs/community-impact-shakespeare/brief.md",
+        "label": "Open brief"
+      },
+      "clean transcript": {
+        "href": "demos/grant-evidence/proofs/community-impact-shakespeare/clean.txt",
+        "label": "Open clean transcript"
+      },
+      "proof bundle": {
+        "href": "demos/grant-evidence/proofs/community-impact-shakespeare/proof.json",
+        "label": "Open proof JSON"
+      }
+    },
+    "searchOutputs": [
+      "search across records"
+    ],
+    "proofPath": "demos/grant-evidence/proofs/community-impact-shakespeare"
   },
   {
-    "id": "demo-grant-evidence-b",
-    "file": "Related community-impact-interview.wav",
-    "time": "Reference corpus",
+    "id": "road-to-redemption-nonprofit",
+    "file": "Nonprofit Founder\u2019s \u201cRoad to Redemption\u201d Includes Helping Returning Citizens | Impact Moment",
+    "time": "Public origin \u00b7 293s",
     "status": "complete",
-    "brief": "A second reference record extends the same workflow so in-app search and reuse are visible instead of theoretical.",
+    "brief": "I want to talk to you about how you find the people  who need your services in the first place. Well, system, the COVID, we've been out here doing a lot of work. We have a lot of sponsors that seem to work that we've been doing, like Servio City. We had a young lady who actually, um, be a mover thing, which is dealing with food and, uh, um, dry food and cook food.",
     "tags": [
-      "outcomes",
-      "families",
-      "related"
+      "nonprofit",
+      "impact",
+      "grant",
+      "community",
+      "evidence"
     ],
     "flagged": false,
     "demo": true,
-    "searchSummary": "related signals, continuity, reuse",
-    "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
-  },
-  {
-    "id": "demo-grant-evidence-c",
-    "file": "Follow-up community-impact-interview.wav",
-    "time": "Reference corpus",
-    "status": "complete",
-    "brief": "A third reference record shows how this app can connect follow-up work, recurring themes, and downstream use without leaving the demo experience.",
-    "tags": [
-      "outcomes",
-      "families",
-      "follow-up"
+    "sourceUrl": "https://www.youtube.com/watch?v=dd2UgwjdLC0",
+    "sourceLabel": "Watch original public video",
+    "sourceTitle": "Nonprofit Founder\u2019s \u201cRoad to Redemption\u201d Includes Helping Returning Citizens | Impact Moment",
+    "publisher": "DCTV Grants",
+    "license": "Public YouTube video processed transiently. Bonfyre retained only derived artifacts.",
+    "sourceCopy": "Source: DCTV Grants on YouTube. Bonfyre downloaded, transcribed, and deleted the media. Only the transcript, brief, and proof remain.",
+    "whyItMatters": "Community stories become grant-ready evidence bundles \u2014 impact narratives tied to real interviews and data.",
+    "searchSummary": "nonprofit, impact, grant",
+    "searchIntro": "Search across the grant evidence records to see how Bonfyre connects related content from different sources.",
+    "outputs": [
+      "impact brief",
+      "clean transcript",
+      "proof bundle",
+      "search across stories"
     ],
-    "flagged": false,
-    "demo": true,
-    "searchSummary": "follow-up, memory, downstream action",
-    "whyItMatters": "One evidence packet becomes a searchable case bank.",
-    "searchIntro": "One evidence packet becomes a searchable case bank. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
+    "outputNotes": {
+      "impact brief": "Bonfyre extracted the key points from the source audio into a structured impact brief.",
+      "clean transcript": "The raw transcript cleaned of filler words, false starts, and artifacts.",
+      "proof bundle": "Full provenance chain: source URL, transcription confidence, processing recipe, and quality flags."
+    },
+    "outputLinks": {
+      "brief": {
+        "href": "demos/grant-evidence/proofs/road-to-redemption-nonprofit/brief.md",
+        "label": "Open brief"
+      },
+      "clean transcript": {
+        "href": "demos/grant-evidence/proofs/road-to-redemption-nonprofit/clean.txt",
+        "label": "Open clean transcript"
+      },
+      "proof bundle": {
+        "href": "demos/grant-evidence/proofs/road-to-redemption-nonprofit/proof.json",
+        "label": "Open proof JSON"
+      }
+    },
+    "searchOutputs": [
+      "search across records"
+    ],
+    "proofPath": "demos/grant-evidence/proofs/road-to-redemption-nonprofit"
   }
 ]

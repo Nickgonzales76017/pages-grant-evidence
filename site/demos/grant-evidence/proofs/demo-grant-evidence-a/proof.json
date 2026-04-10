@@ -1,0 +1,9 @@
+{
+  "transcribe": {
+    "avg_confidence": 0.9103,
+    "rtf": 0.04,
+    "segments_total": 38,
+    "segments_hallucinated": 8
+  },
+  "public_url": "https://www.youtube.com/watch?v=7RvHrpU51d0"
+}
