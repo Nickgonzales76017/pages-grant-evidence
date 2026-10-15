@@ -1,50 +1,49 @@
-# Grant-Writing Evidence Base
+# Aurekai Funding & Impact Studio
 
-> Impact stories and interviews → grant-ready evidence that publishes itself
+**[Open Funding & Impact Studio](https://nickgonzales76017.github.io/pages-grant-evidence/impact-studio/)** · [Original evidence-intake page](https://nickgonzales76017.github.io/pages-grant-evidence/) · [Museum Exhibit Builder](https://nickgonzales76017.github.io/pages-museum-exhibit/)
 
+## Follow a grant from proposal to deliverables
 
-## Pipeline Intelligence
+Funding & Impact Studio helps organizations prepare source-linked, reviewable grant proposals: program restrictions, a balanced budget, matching contributions, supporting evidence, milestones and the difference between planned activity and approved delivery.
 
-| Capability | Detail |
-|---|---|
-| Transcription quality | **0.997** (HCP v3.2, tiny q5_0, 29 MB model) |
-| Hallucination detection | **9 layers** — 0.09% error rate (1 in 1,096 segments) |
-| Pipeline latency | **< 8 ms** per stage |
-| Total binary size | **~2.1 MB** (48 static C11 binaries) |
-| JSON compression | **9.3%** ratio with O(1) field reads (Lambda Tensors) |
-| OpenAI compatibility | Drop-in via **bonfyre-proxy** (`/v1/audio/transcriptions`, `/v1/chat/completions`) |
-| Tests passing | **167** |
+The default **Neighborhood Stories / Oral History & Access** proposal and **Example Neighborhood Arts Fund** are **fictional**. They provide a realistic full workflow but are not a current grant listing or a representation of any real agency's eligibility rules. Bring the actual program notice before making a funding decision.
 
-## Quick Start
+### Change the funding decision
 
-### Browser-first GitHub-native intake
+The initial scenario includes a **$48,000 award request**, **$24,000 declared match** and an exact **$72,000 project budget**. Seven source-linked cost lines span interviews, transcription, accessibility, exhibits, travel, administration, partner services and in-kind venue/volunteer support.
 
-1. Open the live Pages app.
-2. Select a file and download the intake-ready renamed copy.
-3. Open the repo `input/` folder from the app and upload that file with GitHub's own web UI.
-4. Commit to `main`; the Bonfyre Actions runtime processes it and republishes the site.
+Each budget line has a category, grant/match funding stream, amount and source. Change any amount, classification or funding stream and the constraints recalculate. The program evaluates:
 
-### Local repo workflow
+- Award minimum and maximum.
+- Exact agreement of grant expenses with requested funds.
+- Exact agreement of match expenses with declared match.
+- Minimum matching share.
+- Administration and equipment percentage caps.
+- Allowable expense categories.
+- Milestone allocations within the proposed award.
 
-```bash
-make setup
-cp ~/my-recording.wav input/
-git add input/ && git commit -m "add recording"
-git push
-```
+Passing those calculations **does not** establish grant eligibility, a reservation of funds or legal permissibility of in-kind support.
 
-## Architecture
+### Independent evidence review
 
-```
-browser prepare  →  GitHub web upload  →  input/
-                                          ↓
-                             reusable Bonfyre runtime workflow
-                                          ↓
-                         artifacts/ + site/job.json + site/summary.json
-                                          ↓
-                                   site/  →  GitHub Pages
-```
+Use **Casey, applicant** to edit the purpose, request and budget or register new supporting documents. Switch to **Riley, independent reviewer** to review original program terms, five required supporting sources and the evidence register. The applicant cannot approve their own evidence.
 
-## Powered By
+After all numerical restrictions and locally documented source reviews pass, the applicant can prepare a **proposal for authorized submission review**. No external submission is made. No hidden funder endpoint or fictional approval is inserted.
 
-[Bonfyre](https://github.com/Nickgonzales76017/bonfyre) — 48 composable C11 binaries. ~2.1 MB total.
+### Deliverables and funding consequences
+
+The project has three commitments: 60 consent-reviewed oral-history recordings, eight accessible exhibit packages and four inclusive public workshops. Mark work started, attach a specific completion source and have an independent reviewer check the evidence. The funding preview shows the portion of the proposed award associated with locally reviewed work. This is **not** cash received, an invoice sent or an authorized funder drawdown.
+
+The studio keeps a chronological local change history and lets you download a reviewer brief or typed YAFF proposal. Your scenario persists locally in this browser using structured-clone storage and an optimistic revision check.
+
+### Continue to an exhibit
+
+The [Museum Exhibit Builder](https://nickgonzales76017.github.io/pages-museum-exhibit/) is a relevant product for a museum or oral-history team. Its public interface and repository are independent; the link does **not** automatically transfer the grant's private participants or make recordings publishable. Source permissions and consent remain separate.
+
+## Authority and source boundaries
+
+Nothing in this demonstration automatically accesses a real grants database, fetches an authoritative funder eligibility decision, posts a grant application, approves an expense, pays a contractor or authenticates an agency representative.
+
+For deployment, connect the organization, its actual funding notice and restrictions, authorized reviewers, CRM/Finance owners, original impact records and approved payment/release workflows. Until those owners accept the effects, the demo provides a **full reviewable local journey**, not a funder service.
+
+[Explore other Aurekai working applications](https://nickgonzales76017.github.io/bonfyre/#experiences).
