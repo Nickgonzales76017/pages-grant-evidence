@@ -8,7 +8,7 @@ test("reference case reconciles 48k award, 24k match, 72k project and three obli
  assert.equal(x.request,cents(48000));assert.equal(x.matchConfirmed,cents(24000));
  assert.equal(x.grant,cents(48000));assert.equal(x.match,cents(24000));assert.equal(x.total,cents(72000));
  assert.equal(x.allocations,cents(48000));assert.equal(x.claimable,0);
- assert.equal(x.constraints.length,8);assert.equal(x.constraints.filter(q=>q.pass).length,8);
+ assert.equal(x.constraints.length,10);assert.equal(x.constraints.filter(q=>q.pass).length,10);
  assert.equal(x.verdict,"needs_human_evidence_review");
  assert.equal(w.evidence.length,2);assert.equal(w.requirements.length,5);
 });
@@ -75,4 +75,13 @@ test("budget mismatch is not corrected by silently altering grant request",()=>{
  assert.equal(x.constraints.find(c=>c.id==="request-balance").pass,false);
  assert.equal(w.request,cents(48000));
  assert.throws(()=>cents(-2),/nonnegative/);
+});
+
+test("applicant geography and legal status cannot be hidden by a balanced budget",()=>{
+ const w=sample();
+ const badType=transition(w,"casey","set-case",{applicantType:"individual"});
+ assert.equal(evaluate(badType).constraints.find(x=>x.id==="applicant-type").pass,false);
+ const wrongState=transition(w,"casey","set-case",{state:"NY"});
+ assert.equal(evaluate(wrongState).constraints.find(x=>x.id==="applicant-region").pass,false);
+ assert.equal(evaluate(wrongState).verdict,"needs_budget_revision");
 });
