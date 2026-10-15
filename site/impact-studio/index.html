@@ -34,11 +34,16 @@
 <div class="section-head"><div><span class="eyebrow">01 / PROJECT DESIGN</span><h2>What will this funding deliver?</h2></div><span class="pill">Fictional example · editable</span></div>
 <div class="form two-col">
 <label>Organization<input id="applicant" maxlength="160"></label><label>Applicant type<select id="applicantType"><option value="nonprofit">Nonprofit</option><option value="municipality">Municipality</option><option value="individual">Individual</option><option value="business">Business</option><option value="other">Other</option></select></label>
+<label>Operating state (two-letter code)<input id="projectState" maxlength="2" pattern="[A-Za-z]{2}" value="TX"></label>
 <label class="wide">Project title<input id="title" maxlength="180"></label>
 <label class="wide">Public outcome narrative<textarea id="narrative" rows="4" maxlength="3000"></textarea></label>
 <label>Award request (USD)<input id="request" type="number" min="0" max="50000000" step=".01"></label><label>Declared match (USD)<input id="match" type="number" min="0" max="50000000" step=".01"></label>
 </div>
 <div class="program-link"><span>FUNDING PROGRAM</span><strong id="programName">—</strong><small id="programSource">Source: —</small><p>This example uses a fictional funder. Actual grant terms must be checked against the original current notice before reliance.</p><button id="reviewTerms" type="button" class="outline">Review program terms</button></div>
+<div class="official-programs"><span class="eyebrow">PUBLIC FUNDING SOURCES / SEPARATE FROM THIS FICTIONAL PROPOSAL</span>
+<p>Compare the draft against actual funding notices without importing their rules as automatically approved terms. Expired application windows remain expired.</p>
+<div id="knownPrograms" class="known-programs"></div><div id="programComparison" class="program-comparison" role="status">Select an official program to inspect its known constraints, open questions and source.</div>
+</div>
 </section>
 <section class="section">
 <div class="section-head"><div><span class="eyebrow">02 / ALLOWABLE SPENDING</span><h2>Build an auditable budget.</h2></div><span class="head-note">Every amount in integer cents</span></div>
