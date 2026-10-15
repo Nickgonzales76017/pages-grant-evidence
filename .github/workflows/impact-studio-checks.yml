@@ -1,0 +1,28 @@
+name: Funding & Impact contracts
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/impact-studio/**'
+      - 'tests/impact-studio.test.mjs'
+      - '.github/workflows/impact-studio-checks.yml'
+  pull_request:
+    paths:
+      - 'site/impact-studio/**'
+      - 'tests/impact-studio.test.mjs'
+permissions:
+  contents: read
+jobs:
+  review-and-budget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check all client modules
+        run: |
+          node --check site/impact-studio/core.mjs
+          node --check site/impact-studio/studio.mjs
+      - name: Execute budget, evidence and milestone contract tests
+        run: node --test tests/impact-studio.test.mjs
