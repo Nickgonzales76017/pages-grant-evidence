@@ -1,7 +1,8 @@
 import {sample,evaluate,transition,proposal,handoff,cents,money,KINDS,EVIDENCE} from "./core.mjs";
+import {PROGRAMS,compareProgram} from "./program-sources.mjs";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let w=sample(),db=null,storedRev=0,dirty=false;
+let w=sample(),db=null,storedRev=0,dirty=false,selectedProgram="nea-gap-fy27";
 const notice=(message,error=false)=>{
  const t=$("toast");t.textContent=message;t.style.background=error?"#f3c9be":"#d4e2c6";
  t.classList.add("show");clearTimeout(notice.timer);notice.timer=setTimeout(()=>t.classList.remove("show"),4100);
@@ -50,7 +51,7 @@ function renderHeader(){
  $("milestoneMetric").textContent=x.verifiedMilestones+"/"+w.milestones.length;
  $("programName").textContent=w.agency;$("programSource").textContent="Original source: "+w.terms.source;
  for(const [id,value] of [["applicant",w.applicant],["applicantType",w.applicantType],
-  ["title",w.title],["narrative",w.impactNarrative],["request",(w.request/100).toFixed(2)],
+  ["title",w.title],["narrative",w.impactNarrative],["projectState",w.state],["request",(w.request/100).toFixed(2)],
   ["match",(w.matchConfirmed/100).toFixed(2)]])$(id).value=value;
 }
 function budgetTable(){
@@ -177,14 +178,49 @@ function audit(){
  }
  if(!list.childElementCount)list.textContent="No local review events yet; source documents remain unreviewed.";
 }
-function render(){renderHeader();budgetTable();constraints();sources();milestones();preview();audit();}
+function renderOfficialPrograms(){
+ const list=$("knownPrograms");list.replaceChildren();
+ for(const program of PROGRAMS){
+  const button=document.createElement("button");button.type="button";
+  button.className="program-button"+(program.id===selectedProgram?" active":"");
+  const name=document.createElement("strong");name.textContent=program.name;
+  const authority=document.createElement("small");authority.textContent=program.authority;
+  button.append(name,authority);
+  button.addEventListener("click",()=>{selectedProgram=program.id;renderOfficialPrograms();});
+  list.append(button);
+ }
+ const comparison=compareProgram(w,selectedProgram);
+ const root=$("programComparison");root.replaceChildren();
+ const title=document.createElement("h3");title.textContent=comparison.program.name;
+ const status=document.createElement("p");status.className=comparison.blockers.length?"program-warning":"program-open";
+ status.textContent=comparison.blockers.length?
+   "Not ready to apply: the published program has hard blockers.":
+   "Current eligibility and round details require original-source confirmation.";
+ root.append(title,status);
+ const link=document.createElement("a");link.href=comparison.program.source;
+ link.rel="noopener noreferrer";link.target="_blank";
+ link.textContent="Open official funding notice ↗";root.append(link);
+ const section=(title,values)=>{
+  const h=document.createElement("h4");h.textContent=title;root.append(h);
+  const ul=document.createElement("ul");
+  for(const value of values){const item=document.createElement("li");item.textContent=value;ul.append(item);}
+  root.append(ul);
+ };
+ section("Published requirements and dates",comparison.program.known);
+ if(comparison.blockers.length)section("Conflicts with this proposal",comparison.blockers);
+ section("Must still be confirmed",comparison.unknown);
+ const caution=document.createElement("p");
+ caution.textContent="Comparing publicly described programs does not bind their financial terms to the fictional funder, open a new application, or establish applicant eligibility.";
+ root.append(caution);
+}
+function render(){renderHeader();budgetTable();constraints();sources();milestones();preview();audit();renderOfficialPrograms();}
 function download(name,content,type="text/markdown"){
  const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement("a");
  a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2500);
 }
 $("actor").addEventListener("change",e=>{w.actor=e.target.value;render();notice("Simulated role switch; this is not authenticated funder identity.");});
 for(const [id,key] of [["applicant","applicant"],["applicantType","applicantType"],
- ["title","title"],["narrative","impactNarrative"],["request","request"],["match","matchConfirmed"]]){
+ ["title","title"],["narrative","impactNarrative"],["projectState","state"],["request","request"],["match","matchConfirmed"]]){
  $(id).addEventListener("change",e=>safe(()=>mutate("set-case",{[key]:e.target.value})));
 }
 for(const kind of KINDS)$("budgetKind").add(new Option(kind,kind));
