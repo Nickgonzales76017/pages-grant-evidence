@@ -42,12 +42,13 @@ export function sample(){
    {id:"partner",label:"Signed partner/matching funds commitment",source:"fixture://partnership/unconfirmed",state:"source_missing"}
   ],
   budget:[
-   line("field-interviews","Oral history collection and interviews","personnel",24000,"grant","fixture://cost/staffing"),
-   line("archive","Transcription, accessibility, archival production","services",16000,"grant","fixture://cost/services"),
-   line("exhibits","Eight accessible exhibit packages","materials",12000,"grant","fixture://cost/exhibits"),
+   line("field-interviews","Oral history collection and interviews","personnel",20000,"grant","fixture://cost/staffing"),
+   line("archive","Transcription, accessibility, archival production","services",14000,"grant","fixture://cost/services"),
+   line("exhibits","Eight accessible exhibit packages","materials",10000,"grant","fixture://cost/exhibits"),
    line("travel","Local participation and transport","travel",4000,"grant","fixture://cost/travel"),
    line("operations","Project coordination and administration","administration",4000,"match","fixture://cost/admin"),
-   line("partners","Community partners and venue contribution","services",12000,"match","fixture://cost/partners")
+   line("partners","Community partners and venue contribution","services",12000,"match","fixture://cost/partners"),
+   line("donor-hours","Donated venue / volunteer service valuation","services",8000,"match","fixture://cost/donor-hours")
   ],
   milestones:[
    milestone("oral-records","60 consent-reviewed oral history recordings","month-5",18000,60),
@@ -216,12 +217,13 @@ export function transition(world,actor,command,data={}){
  throw Error("Unsupported institutional action.");
 }
 const text=s=>String(s??"").replace(/[\r\n\t]/g," ").slice(0,3000);
+const atom=s=>'"'+text(s).replaceAll('"',"'")+'"';
 export function proposal(w){
  const score=evaluate(w);
  const lines=["# "+text(w.title),"",
   "Applicant: "+text(w.applicant),"Program: "+text(w.agency),
   "Source: "+text(w.terms.source),"Truth: "+w.truth,
-  "Requested: "+money(w.request),"Confirmed match (applicant statement): "+money(w.matchConfirmed),
+  "Requested: "+money(w.request),"Declared match (not independently verified): "+money(w.matchConfirmed),
   "Budget total: "+money(score.total),"","## Project purpose",w.impactNarrative,"",
   "## Funding restrictions and gaps"];
  for(const c of score.constraints)lines.push("- "+(c.pass?"PASS":"REVIEW")+" — "+c.label);
@@ -238,11 +240,11 @@ export function proposal(w){
 export function handoff(w){
  const result=evaluate(w),rows=[
   "program impact-funding-proposal","application "+w.id,
-  "applicant "+JSON.stringify(text(w.applicant)),"program_ref "+JSON.stringify(w.terms.source),
+  "applicant "+atom(w.applicant),"program_ref "+atom(w.terms.source),
   "request_cents "+w.request,"match_cents "+w.matchConfirmed,"revision "+w.revision,
   "review_state "+result.verdict];
- for(const b of w.budget)rows.push("cost "+b.id+" "+b.kind+" "+b.funding+" "+b.total+" "+JSON.stringify(b.source));
- for(const m of w.milestones)rows.push("milestone "+m.id+" "+m.allocation+" "+m.status+" "+JSON.stringify(m.evidenceRef||"unbound"));
+ for(const b of w.budget)rows.push("cost "+b.id+" "+b.kind+" "+b.funding+" "+b.total+" "+atom(b.source));
+ for(const m of w.milestones)rows.push("milestone "+m.id+" "+m.allocation+" "+m.status+" "+atom(m.evidenceRef||"unbound"));
  rows.push("authority local-draft-only","cannot_infer local_source_review_is_not_funder_approval_or_paid_grant_claim");
  return rows.join("\n")+"\n";
 }
