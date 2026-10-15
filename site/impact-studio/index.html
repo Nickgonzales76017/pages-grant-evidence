@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><meta name="description" content="Aurekai Funding & Impact Studio: reconcile grant budgets, source review, match obligations, deliverables, milestones and applicant/funder evidence.">
+<link rel="canonical" href="https://nickgonzales76017.github.io/pages-grant-evidence/impact-studio/">
+<link rel="stylesheet" href="./studio.css"><script type="module" src="./studio.mjs"></script>
+<title>Funding & Impact Studio · Aurekai</title></head><body>
+<a class="skip" href="#workspace">Skip to funding workspace</a>
+<header class="topbar">
+<a href="../" class="brand"><span class="brand-mark">A·</span><span>AUREKAI<small>FUNDING & IMPACT / SOURCE-LED PROPOSALS</small></span></a>
+<nav aria-label="Experience navigation"><a href="../">Original grant intake</a><a href="https://nickgonzales76017.github.io/pages-museum-exhibit/">Museum Exhibit</a><a href="https://nickgonzales76017.github.io/bonfyre/#experiences">All work ↗</a></nav>
+<span class="state-pill">Local review sandbox</span>
+</header>
+<main id="workspace">
+<section class="intro"><div class="eyebrow">PROGRAM / ELIGIBILITY / FINANCIAL CONSTRAINTS / MEASURED DELIVERY</div>
+<div class="hero"><div><h1>Fund the work.<br><em>Prove the outcome.</em></h1>
+<p>From a funding opportunity to a defensible budget, sourced program requirements and milestones a reviewer can audit. Change the numbers and requirements and see the decision change. No hidden grant submission or invented awards.</p></div>
+<div class="head-actions"><button type="button" class="quiet" id="reset">Load reference case</button><button type="button" class="primary" id="save">Save draft</button><button type="button" class="outline" id="download">Export reviewer brief ↓</button></div></div>
+</section>
+<section class="identitybar">
+<div class="identity-cell"><span>APPLICANT</span><strong id="organization">North District Culture Lab</strong></div>
+<div class="identity-cell"><span>ILLUSTRATIVE FUNDER</span><strong id="funder">Example Neighborhood Arts Fund</strong></div>
+<div class="identity-cell actor"><label for="actor">SIMULATE ROLE</label><select id="actor"><option value="casey">Casey · Applicant</option><option value="riley">Riley · Independent reviewer</option></select></div>
+<div class="identity-cell"><span>REVIEW STATE</span><strong id="caseStatus">Draft</strong></div>
+</section>
+<section class="stats" aria-label="Funding balance and readiness">
+<div class="stat"><span>AWARD REQUEST</span><strong id="requestMetric">—</strong><small>Proposed restricted funding</small></div>
+<div class="stat"><span>DECLARED MATCH</span><strong id="matchMetric">—</strong><small>Not independently verified</small></div>
+<div class="stat"><span>PROJECT COST</span><strong id="projectMetric">—</strong><small>Linked line items</small></div>
+<div class="stat"><span>BUDGET RULES</span><strong id="rulesMetric">—</strong><small>Funding restrictions</small></div>
+<div class="stat"><span>OUTCOME REVIEW</span><strong id="milestoneMetric">—</strong><small>Milestones locally reviewed</small></div>
+</section>
+<div class="editor-grid">
+<div class="editor">
+<section class="section" id="program">
+<div class="section-head"><div><span class="eyebrow">01 / PROJECT DESIGN</span><h2>What will this funding deliver?</h2></div><span class="pill">Fictional example · editable</span></div>
+<div class="form two-col">
+<label>Organization<input id="applicant" maxlength="160"></label><label>Applicant type<select id="applicantType"><option value="nonprofit">Nonprofit</option><option value="municipality">Municipality</option><option value="individual">Individual</option><option value="business">Business</option><option value="other">Other</option></select></label>
+<label class="wide">Project title<input id="title" maxlength="180"></label>
+<label class="wide">Public outcome narrative<textarea id="narrative" rows="4" maxlength="3000"></textarea></label>
+<label>Award request (USD)<input id="request" type="number" min="0" max="50000000" step=".01"></label><label>Declared match (USD)<input id="match" type="number" min="0" max="50000000" step=".01"></label>
+</div>
+<div class="program-link"><span>FUNDING PROGRAM</span><strong id="programName">—</strong><small id="programSource">Source: —</small><p>This example uses a fictional funder. Actual grant terms must be checked against the original current notice before reliance.</p></div>
+</section>
+<section class="section">
+<div class="section-head"><div><span class="eyebrow">02 / ALLOWABLE SPENDING</span><h2>Build an auditable budget.</h2></div><span class="head-note">Every amount in integer cents</span></div>
+<div class="budget-table-wrap"><table class="budget-table"><thead><tr><th>Cost / purpose</th><th>Category</th><th>Funding</th><th>Amount USD</th><th>Source</th></tr></thead><tbody id="budgetRows"></tbody></table></div>
+<details class="add"><summary>+ Add a new sourced budget item</summary>
+<form id="budgetForm" class="form two-col">
+<label>Item identity<input name="id" pattern="[a-z][a-z0-9-]{2,70}" required placeholder="e.g. accessibility-kit"></label>
+<label>Purpose<input name="label" required maxlength="160"></label>
+<label>Category<select id="budgetKind" name="kind"></select></label>
+<label>Funding stream<select name="funding"><option value="grant">Requested grant</option><option value="match">Declared match</option></select></label>
+<label>Estimated cost USD<input name="total" required type="number" min="0" step=".01" value="0"></label>
+<label>Cost source URL / fixture<input name="source" maxlength="600" required placeholder="https://…"></label>
+<button type="submit" class="primary">Add cost line</button>
+</form></details>
+<div id="constraintBoard" class="constraints" aria-live="polite"></div>
+</section>
+<section class="section">
+<div class="section-head"><div><span class="eyebrow">03 / SOURCE REVIEW</span><h2>What must be substantiated?</h2></div><span id="missingCount" class="head-note">—</span></div>
+<p class="helper">A supplied document is not independently reviewed. Even a local review does not establish formal funder eligibility, approval or acceptance.</p>
+<div id="requirements" class="requirement-list"></div>
+<div class="evidence-header"><h3>Evidence register</h3><span>Source identity retained</span></div>
+<div id="evidenceList" class="evidence-list"></div>
+<details class="add"><summary>+ Attach a source reference</summary>
+<form id="evidenceForm" class="form two-col"><label>Evidence ID<input name="id" pattern="[a-z][a-z0-9-]{2,70}" required placeholder="ev-audit-1"></label>
+<label>Document name<input name="title" required maxlength="180"></label>
+<label>Evidence kind<select id="evidenceKind" name="kind"></select></label>
+<label>Supports requirement ID<input name="linkTo" maxlength="85" placeholder="e.g. org-status"></label>
+<label class="wide">Original source URL<input name="source" maxlength="600" required placeholder="https://…"></label><button class="primary" type="submit">Register source</button></form>
+</details>
+</section>
+<section class="section">
+<div class="section-head"><div><span class="eyebrow">04 / DELIVERY OBLIGATIONS</span><h2>Outcomes, not merely spending.</h2></div></div>
+<p class="helper">Each milestone needs an explicit evidence reference and independent reviewer before any projected grant drawdown is shown. This sandbox makes no funder payment claims.</p>
+<div id="milestones" class="milestones"></div>
+</section>
+</div>
+<aside class="sidebar">
+<section class="preview">
+<div class="preview-label">LIVE / FUNDER REVIEW PREVIEW</div><div class="paper">
+<div class="paper-rule"></div><span class="paper-eyebrow">FUNDING & IMPACT PROPOSAL</span>
+<h2 id="paperTitle">—</h2><div id="paperContent"></div>
+<footer id="paperFooter">Planning only / no submission</footer>
+</div>
+<div class="preview-actions"><button class="primary" id="prepare" type="button">Prepare for authorized review</button>
+<button id="yaff" class="outline" type="button">Export typed proposal ↓</button></div>
+</section>
+<section class="flow">
+<div class="eyebrow">05 / ACCOUNTABLE CONTINUITY</div><h3>When funding becomes outcomes</h3>
+<p>Follow an evidence item from its original source into a cost or milestone. Keep applicant action separate from independent review, and show what remains unsupported.</p>
+<div class="flow-line"><span>01</span> Sourced program + applicant</div><div class="flow-line"><span>02</span> Exact budget + declared match</div>
+<div class="flow-line"><span>03</span> Independent review</div><div class="flow-line"><span>04</span> Approved milestones</div>
+<div class="flow-line"><span>05</span> Authorized external funder effect</div>
+<p>Step 05 is not available from this browser demo.</p>
+<a href="https://nickgonzales76017.github.io/pages-museum-exhibit/" rel="noopener noreferrer" target="_blank" class="related">Continue exhibit production in Museum Exhibit ↗</a>
+</section>
+<section class="journal-panel"><div class="eyebrow">LOCAL / CHANGE RECORD</div><h3>Who reviewed what?</h3>
+<div id="audit" class="audit"></div></section>
+</aside>
+</div>
+</main>
+<footer class="page-foot"><span>AUREKAI / GOVERNED FUNDING OPERATIONS</span><span>Illustrative data · No real award or disbursement · Local structured drafts</span><a href="../">Grant evidence intake ↗</a></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
