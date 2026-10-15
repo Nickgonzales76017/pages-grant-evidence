@@ -24,5 +24,6 @@ jobs:
         run: |
           node --check site/impact-studio/core.mjs
           node --check site/impact-studio/studio.mjs
+          node --check site/impact-studio/program-sources.mjs
       - name: Execute budget, evidence and milestone contract tests
-        run: node --test tests/impact-studio.test.mjs
+        run: node --test tests/impact-studio.test.mjs tests/official-programs.test.mjs
