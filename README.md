@@ -24,6 +24,14 @@ Each budget line has a category, grant/match funding stream, amount and source. 
 
 Passing those calculations **does not** establish grant eligibility, a reservation of funds or legal permissibility of in-kind support.
 
+### Compare actual public funding notices
+
+The source explorer now links to three independently identified official programs: [NEA Grants for Arts Projects](https://www.arts.gov/grants/grants-for-arts-projects), [Dallas Cultural Organizations Program](https://dallasculture.org/cultural-funding-programs/cultural-organizations-program/) and [Dallas ArtsActivate](https://dallasculture.org/cultural-funding-programs/artsactivate/).
+
+The NEA's February and July 2026 FY 2027 application cycles have passed; its standard Grants for Arts Projects category describes a 1:1 cost share. The FY 2026–27 Dallas COP closed applications April 10, 2026. ArtsActivate 2027 describes multiple rounds through the 2026–27 period, but the active round, applicant subgroup and program-specific limits require checking the latest official guidelines.
+
+Selecting one of those references **does not overwrite** the fictional program's funding terms. The comparison flags known deadline and matching conflicts while keeping unknown eligibility, legal status, program history and application rules explicitly unresolved. It does not offer an "apply" button for a closed round.
+
 ### Independent evidence review
 
 Use **Casey, applicant** to edit the purpose, request and budget or register new supporting documents. Switch to **Riley, independent reviewer** to review original program terms, five required supporting sources and the evidence register. The applicant cannot approve their own evidence.
