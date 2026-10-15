@@ -29,6 +29,7 @@ export function sample(){
   terms:{source:"fixture://funding/neighborhood-arts",minRequest:cents(15000),maxRequest:cents(60000),
    minMatchPercent:20,maxIndirectPercent:10,maxEquipmentPercent:15,
    allowed:["personnel","services","travel","equipment","accessibility","materials","administration"],
+   allowedApplicants:["nonprofit","municipality"],allowedStates:["TX"],
    approval:"unreviewed"},
   title:"Preserve neighborhood oral histories, create accessible public exhibits",
   impactNarrative:"Collect and preserve 60 participant-approved oral histories, produce eight accessible community exhibits, and host four inclusive listening workshops.",
@@ -106,6 +107,8 @@ export function evaluate(w){
  const equipment=sum(w.budget.filter(b=>b.kind==="equipment"),"total");
  const totalFunding=w.request+w.matchConfirmed;
  const constraints=[
+  {id:"applicant-type",label:"Applicant type allowed by this program",pass:w.terms.allowedApplicants.includes(w.applicantType)},
+  {id:"applicant-region",label:"Project is in an allowed jurisdiction",pass:w.terms.allowedStates.includes(w.state)},
   {id:"request-range",label:"Award request within published limits",pass:w.request>=w.terms.minRequest&&w.request<=w.terms.maxRequest},
   {id:"request-balance",label:"Grant expenses equal requested award",pass:grant===w.request},
   {id:"match-coverage",label:"Match expenses equal confirmed contribution",pass:match===w.matchConfirmed},
@@ -144,6 +147,7 @@ export function transition(world,actor,command,data={}){
   if(data.request!==undefined)w.request=cents(data.request);
   if(data.matchConfirmed!==undefined)w.matchConfirmed=cents(data.matchConfirmed);
   if(data.applicantType)w.applicantType=data.applicantType;
+  if(data.state)w.state=String(data.state).trim().toUpperCase();
   w.caseStatus="draft";return record(w,actor,command,w.id);
  }
  if(command==="cost"){
