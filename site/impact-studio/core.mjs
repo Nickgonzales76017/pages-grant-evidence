@@ -107,8 +107,8 @@ export function evaluate(w){
  const equipment=sum(w.budget.filter(b=>b.kind==="equipment"),"total");
  const totalFunding=w.request+w.matchConfirmed;
  const constraints=[
-  {id:"applicant-type",label:"Applicant type allowed by this program",pass:w.terms.allowedApplicants.includes(w.applicantType)},
-  {id:"applicant-region",label:"Project is in an allowed jurisdiction",pass:w.terms.allowedStates.includes(w.state)},
+  {id:"applicant-type",label:"Applicant type allowed by this program",pass:(w.terms.allowedApplicants||["nonprofit","municipality"]).includes(w.applicantType)},
+  {id:"applicant-region",label:"Project is in an allowed jurisdiction",pass:(w.terms.allowedStates||["TX"]).includes(w.state)},
   {id:"request-range",label:"Award request within published limits",pass:w.request>=w.terms.minRequest&&w.request<=w.terms.maxRequest},
   {id:"request-balance",label:"Grant expenses equal requested award",pass:grant===w.request},
   {id:"match-coverage",label:"Match expenses equal confirmed contribution",pass:match===w.matchConfirmed},
