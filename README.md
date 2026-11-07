@@ -2,6 +2,18 @@
 
 **[Open Funding & Impact Studio](https://nickgonzales76017.github.io/pages-grant-evidence/impact-studio/)** · [Original evidence-intake page](https://nickgonzales76017.github.io/pages-grant-evidence/) · [Museum Exhibit Builder](https://nickgonzales76017.github.io/pages-museum-exhibit/)
 
+## Aurekai / Bonfÿre: product contract
+
+| | This experience |
+|---|---|
+| **For** | Organizations and grant teams |
+| **Outcome** | Prepare evidence-linked proposals, budgets and milestones for review |
+| **Technical boundary** | A GitHub Pages experience showing source-aware, reviewable work; do not infer a deployed native Bonfÿre executor from the browser UI |
+| **Maturity** | Fictional grant scenario; no actual funding commitment or eligibility determination |
+| **Acceptance** | Follow the linked experience and inspect its actual source, tests, workflow and exported artifacts; an illustrative action is not proof of a downstream effect |
+
+**Aurekai** owns the product, public participation and business opportunity. **Bonfÿre** owns the reusable identity, capability, authorization, work and evidence architecture. [Why the two exist](https://github.com/Nickgonzales76017/bonfyre/blob/main/docs/aurekai-bonfyre-model.md).
+
 ## Follow a grant from proposal to deliverables
 
 Funding & Impact Studio helps organizations prepare source-linked, reviewable grant proposals: program restrictions, a balanced budget, matching contributions, supporting evidence, milestones and the difference between planned activity and approved delivery.
